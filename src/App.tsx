@@ -1,12 +1,7 @@
-import { Button } from '@components/Button';
+import { ThemeProviderWrapper } from './contexts/theme';
 
 function App() {
-  return (
-    <div>
-      <Button type="secondary">Reset</Button>
-      <Button type="primary">Click</Button>
-    </div>
-  );
+  return <ThemeProviderWrapper>hello world</ThemeProviderWrapper>;
 }
 
 export default App;
