@@ -16,9 +16,16 @@ export const ColorThemes: Record<ThemeTypes, ITheme> = {
     success: { default: '#00CF6C' },
   },
   dark: {
-    primary: { default: '' },
+    primary: {
+      default: '#000',
+    },
     secondary: { default: '' },
-    brand: { default: '' },
+    brand: {
+      default: '',
+      shades: {
+        '40': '',
+      },
+    },
     success: { default: '' },
   },
 };
