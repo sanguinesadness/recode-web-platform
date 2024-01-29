@@ -29,3 +29,27 @@ jobs:
 
       - name: Build
         run: yarn build
+
+      - name: Set up Docker
+        uses: actions/setup-docker@v2
+        with:
+          dockerfile: Dockerfile
+
+      - name: Build docker image
+        run: docker build -t ${{ secrets.DOCKER_USERNAME }}/recode-web-platform:1.2 .
+
+      - name: Log in to Docker Registry
+        run: docker login --username ${{ secrets.DOCKER_USERNAME }} --password ${{ secrets.DOCKER_PASSWORD }}
+
+      - name: Push to Docker Registry
+        run: docker push ${{ secrets.DOCKER_USERNAME }}/recode-web-platform:1.2
+
+      - name: SSH Deploy
+        uses: appleboy/ssh-action@v2
+        with:
+          host: ${{ secrets.REMOTE_HOST }}
+          username: ${{ secrets.REMOTE_USERNAME }}
+          key: ${{ secrets.REMOTE_SSH_KEY }}
+          script: |
+            docker pull ${{ secrets.DOCKER_USERNAME }}/recode-web-platform:1.2
+            docker run -d -p 80:80 ${{ secrets.DOCKER_USERNAME }}/recode-web-platform:1.2
