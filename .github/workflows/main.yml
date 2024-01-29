@@ -1,14 +1,31 @@
-name: Simple Workflow
+name: Build and Lint
 
-on: [ push ]
+on:
+  push:
+    branches:
+      - main
 
 jobs:
-  build:
+  build-and-lint:
     runs-on: ubuntu-latest
 
     steps:
       - name: Checkout repository
         uses: actions/checkout@v2
 
-      - name: Print Hello World
-        run: echo "Hello, World!"
+      - name: Set up Node.js
+        uses: actions/setup-node@v3
+        with:
+          node-version: 20
+
+      - name: Install dependencies
+        run: yarn install
+
+      - name: Run ESLint
+        run: yarn lint
+
+      - name: Format code
+        run: yarn format
+
+      - name: Build
+        run: yarn build
