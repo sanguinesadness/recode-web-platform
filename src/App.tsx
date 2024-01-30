@@ -9,7 +9,7 @@ function App() {
     // @ts-ignore
     <ThemeProviderWrapper>
       <AppWrapper>
-        hello world v4
+        hello world v5
         <ThemeSwitcher />
       </AppWrapper>
     </ThemeProviderWrapper>
