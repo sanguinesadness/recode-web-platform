@@ -56,5 +56,6 @@ jobs:
               sudo docker stop $(docker ps -a -q) 
               sudo docker rm $(docker ps -a -q) 
             fi
+            sudo service docker restart
             sudo docker run -d -p 80:80 ${{ secrets.DOCKER_USERNAME }}/recode-web-platform:1.2
  
