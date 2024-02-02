@@ -62,7 +62,7 @@ jobs:
             echo $DOCKER_USERNAME/$DOCKER_REPO:$GIT_BRANCH-$GIT_COMMIT
             echo IMAGE_NAME
             docker login --username $DOCKER_USERNAME --password $DOCKER_PASSWORD
-            docker pull $DOCKER_USERNAME/$DOCKER_REPO:GIT_REF-GIT_SHA
+            docker pull $DOCKER_USERNAME/$DOCKER_REPO:$GIT_REF-$GIT_SHA
             if [ "$(docker ps -a -q)" ]
             then 
               docker stop $(docker ps -a -q) 
