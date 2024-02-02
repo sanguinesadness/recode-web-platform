@@ -46,21 +46,23 @@ jobs:
 
       - name: Start docker container
         env:
-          GIT_COMMIT: ${{ github.sha }}
-          GIT_BRANCH: ${{ github.ref_name }}
+          GIT_SHA: ${{ github.sha }}
+          GIT_REF: ${{ github.ref }}
           DOCKER_REPO: ${{ secrets.DOCKER_REPO }}
           DOCKER_USERNAME: ${{ secrets.DOCKER_USERNAME }}
           DOCKER_PASSWORD: ${{ secrets.DOCKER_PASSWORD }}
         uses: appleboy/ssh-action@v1.0.1
         with:
-          envs: GIT_COMMIT,BRANCH_NAME,REPOSITORY,REGISTRY
+          envs: GIT_SHA,GIT_REF,DOCKER_REPO,DOCKER_USERNAME,DOCKER_PASSWORD
           host: ${{ secrets.REMOTE_HOST }}
           username: ${{ secrets.REMOTE_USERNAME }}
           key: ${{ secrets.REMOTE_SSH_KEY }}
           script: |
+            export IMAGE_NAME=$DOCKER_USERNAME/$DOCKER_REPO:$GIT_BRANCH-$GIT_COMMIT
             echo $DOCKER_USERNAME/$DOCKER_REPO:$GIT_BRANCH-$GIT_COMMIT
+            echo IMAGE_NAME
             docker login --username $DOCKER_USERNAME --password $DOCKER_PASSWORD
-            docker pull $DOCKER_USERNAME/$DOCKER_REPO:$GIT_BRANCH-$GIT_COMMIT
+            docker pull $DOCKER_USERNAME/$DOCKER_REPO:GIT_REF-GIT_SHA
             if [ "$(docker ps -a -q)" ]
             then 
               docker stop $(docker ps -a -q) 
