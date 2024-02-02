@@ -58,6 +58,7 @@ jobs:
           username: ${{ secrets.REMOTE_USERNAME }}
           key: ${{ secrets.REMOTE_SSH_KEY }}
           script: |
+            echo $DOCKER_USERNAME/$DOCKER_REPO:$GIT_BRANCH-$GIT_COMMIT
             docker login --username $DOCKER_USERNAME --password $DOCKER_PASSWORD
             docker pull $DOCKER_USERNAME/$DOCKER_REPO:$GIT_BRANCH-$GIT_COMMIT
             if [ "$(docker ps -a -q)" ]
