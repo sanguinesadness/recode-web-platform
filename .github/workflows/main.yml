@@ -48,7 +48,7 @@ jobs:
         env:
           DOCKER_USERNAME: ${{ secrets.DOCKER_USERNAME }}
           DOCKER_PASSWORD: ${{ secrets.DOCKER_PASSWORD }}
-          DOCKER_IMAGE: ${{ secrets.DOCKER_USERNAME }}/${{ secrets.DOCKER_REPO }}:${{ github.ref }}-${{ github.sha }}
+          DOCKER_IMAGE: ${{ secrets.DOCKER_USERNAME }}/${{ secrets.DOCKER_REPO }}:${{ github.ref_name }}-${{ github.sha }}
         uses: appleboy/ssh-action@v1.0.1
         with:
           envs: DOCKER_USERNAME, DOCKER_PASSWORD, DOCKER_IMAGE
