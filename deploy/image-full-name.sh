@@ -2,7 +2,7 @@
 
 CURRENT_DIR=$(cd -P -- "$(dirname -- "$0")" && pwd -P)
 IMAGE_TAG=$("$CURRENT_DIR"/image-tag.sh)
-CR_REGISTRY=agamalievrustam37
-CR_REPOSITORY=recode-web-platform
-IMAGE_FULL_NAME="$CR_REGISTRY"/"$CR_REPOSITORY":"$IMAGE_TAG"
+DOCKER_USERNAME=agamalievrustam37
+DOCKER_REPO=recode-web-platform
+IMAGE_FULL_NAME="$DOCKER_USERNAME"/"$DOCKER_REPO":"$IMAGE_TAG"
 echo $IMAGE_FULL_NAME

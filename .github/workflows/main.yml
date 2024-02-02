@@ -44,18 +44,25 @@ jobs:
         run: |
           sh ./deploy/push-image.sh
 
-      - name: SSH Deploy
+      - name: Start docker container
+        env:
+          GIT_COMMIT: ${{ github.sha }}
+          GIT_BRANCH: ${{ github.ref_name }}
+          DOCKER_REPO: ${{ secrets.DOCKER_REPO }}
+          DOCKER_USERNAME: ${{ secrets.DOCKER_USERNAME }}
+          DOCKER_PASSWORD: ${{ secrets.DOCKER_PASSWORD }}
         uses: appleboy/ssh-action@v1.0.1
         with:
+          envs: GIT_COMMIT,BRANCH_NAME,REPOSITORY,REGISTRY
           host: ${{ secrets.REMOTE_HOST }}
           username: ${{ secrets.REMOTE_USERNAME }}
           key: ${{ secrets.REMOTE_SSH_KEY }}
           script: |
-            docker login --username ${{ secrets.DOCKER_USERNAME }} --password ${{ secrets.DOCKER_PASSWORD }}
-            docker pull ${{ secrets.DOCKER_USERNAME }}/recode-web-platform:1.2
+            docker login --username $DOCKER_USERNAME --password $DOCKER_PASSWORD
+            docker pull $DOCKER_USERNAME/$DOCKER_REPO:$GIT_BRANCH-$GIT_COMMIT
             if [ "$(docker ps -a -q)" ]
             then 
               docker stop $(docker ps -a -q) 
               docker rm $(docker ps -a -q) 
             fi
-            docker run -d -p 80:80 ${{ secrets.DOCKER_USERNAME }}/recode-web-platform:1.2
+            docker run $DOCKER_USERNAME/$DOCKER_REPO:$GIT_BRANCH-$GIT_COMMIT
