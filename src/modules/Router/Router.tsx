@@ -1,3 +1,4 @@
+import { ERoutes } from '@src/constants';
 import { Editor } from '@src/pages/Editor';
 import { Home } from '@src/pages/Home';
 import React from 'react';
@@ -7,8 +8,11 @@ export const Router: React.FC = () => {
   return (
     <BrowserRouter>
       <Routes>
-        <Route path="/" element={<Home />} />
-        <Route path="/editor" element={<Editor />} />
+        <Route path={ERoutes.ROOT}>
+          <Route index element={<Home />} />
+          <Route path={ERoutes.HOME} element={<Home />} />
+        </Route>
+        <Route path={ERoutes.EDITOR} element={<Editor />} />
       </Routes>
     </BrowserRouter>
   );

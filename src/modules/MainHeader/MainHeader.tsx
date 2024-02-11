@@ -1,16 +1,25 @@
 import { RecodeLogo } from '@src/assets';
 import { Card } from '@src/components/Card';
 import { IconButton } from '@src/components/IconButton';
-import { SearchBar } from '@src/components/SearchBar/SearchBar.tsx';
-import { EIconTypes } from '@src/constants';
+import { SearchBar } from '@src/components/SearchBar';
+import { EIconTypes, ERoutes } from '@src/constants';
 import React from 'react';
+import { useNavigate } from 'react-router-dom';
 import * as Styled from './styled.ts';
 
 export const MainHeader: React.FC = () => {
+  const navigate = useNavigate();
+
+  const handleGoToHome = (): void => {
+    navigate(ERoutes.HOME);
+  };
+
   return (
     <Card>
       <Styled.CardContent>
-        <RecodeLogo width={120} />
+        <Styled.LogoStyled onClick={handleGoToHome}>
+          <RecodeLogo width={120} />
+        </Styled.LogoStyled>
         <SearchBar
           placeholder="dependency injection tasks"
           onSubmit={console.log}
