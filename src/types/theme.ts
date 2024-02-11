@@ -4,6 +4,8 @@ export enum ThemeTypes {
 }
 
 export interface ITheme {
+  white: IColor;
+  black: IColor;
   primary: IColor;
   secondary: IColor;
   brand: IColor;
