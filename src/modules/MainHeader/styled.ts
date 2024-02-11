@@ -1,5 +1,4 @@
 import { ActionStyled } from '@src/components/Action';
-import { SearchBarStyled } from '@src/components/SearchBar';
 import styled from 'styled-components';
 
 export const CardContent = styled.div(() => ({
@@ -8,12 +7,7 @@ export const CardContent = styled.div(() => ({
   alignItems: 'center',
   padding: '0 30px',
   gap: '50px',
-  height: '68px',
-
-  [`${SearchBarStyled}`]: {
-    maxWidth: '500px',
-    marginRight: 'auto',
-  },
+  height: '60px',
 }));
 
 export const LogoStyled = styled(ActionStyled)(() => ({

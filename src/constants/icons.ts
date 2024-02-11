@@ -4,4 +4,5 @@ export enum EIconTypes {
   INFO = 'INFO',
   SEARCH = 'SEARCH',
   CROSS = 'CROSS',
+  COMMENT_CHECK = 'COMMENT_CHECK',
 }

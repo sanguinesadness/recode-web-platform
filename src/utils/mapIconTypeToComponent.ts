@@ -1,4 +1,5 @@
 import {
+  CommentCheckIcon,
   CrossIcon,
   HeartIcon,
   HomeIcon,
@@ -18,4 +19,5 @@ export const mapIconTypeToComponent: Record<
   [EIconTypes.INFO]: InfoIcon,
   [EIconTypes.SEARCH]: SearchIcon,
   [EIconTypes.CROSS]: CrossIcon,
+  [EIconTypes.COMMENT_CHECK]: CommentCheckIcon,
 };
