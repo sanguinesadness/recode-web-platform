@@ -17,3 +17,5 @@ export const mockTaskTags: ITaskTag[] = [
     color: 'red',
   },
 ];
+
+export const mockAuthorName = 'x8diar';
