@@ -5,4 +5,5 @@ export interface IIconButtonProps extends IIconProps {
   onClick?: VoidFunction;
   type: EIconTypes;
   disabled?: boolean;
+  className?: string;
 }

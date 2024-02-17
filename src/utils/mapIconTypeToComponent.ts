@@ -2,6 +2,7 @@ import {
   CommentCheckIcon,
   CrossIcon,
   HeartIcon,
+  HeartSolidIcon,
   HomeIcon,
   InfoIcon,
   SearchIcon,
@@ -16,6 +17,7 @@ export const mapIconTypeToComponent: Record<
 > = {
   [EIconTypes.HOME]: HomeIcon,
   [EIconTypes.HEART]: HeartIcon,
+  [EIconTypes.HEART_SOLID]: HeartSolidIcon,
   [EIconTypes.INFO]: InfoIcon,
   [EIconTypes.SEARCH]: SearchIcon,
   [EIconTypes.CROSS]: CrossIcon,

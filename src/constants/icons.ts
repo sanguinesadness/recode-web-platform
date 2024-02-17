@@ -1,5 +1,6 @@
 export enum EIconTypes {
   HEART = 'HEART',
+  HEART_SOLID = 'HEART_SOLID',
   HOME = 'HOME',
   INFO = 'INFO',
   SEARCH = 'SEARCH',

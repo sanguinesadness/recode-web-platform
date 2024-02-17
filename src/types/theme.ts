@@ -10,11 +10,13 @@ export interface ITheme {
   secondary: IColor;
   brand: IColor;
   success: IColor;
+  red: IColor;
+  orange: IColor;
 }
 
 export interface IColor {
   default: string;
-  shades?: IColorShades;
+  shades: IColorShades;
 }
 
 export interface IColorShades {

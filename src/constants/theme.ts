@@ -2,7 +2,20 @@ import { ITheme, ThemeTypes } from '@src/types';
 
 export const ColorThemes: Record<ThemeTypes, ITheme> = {
   light: {
-    white: { default: '#FFFFFF' },
+    white: {
+      default: '#FFFFFF',
+      shades: {
+        '10': '#FFFFFF10',
+        '20': '#FFFFFF20',
+        '30': '#FFFFFF30',
+        '40': '#FFFFFF40',
+        '50': '#FFFFFF50',
+        '60': '#FFFFFF60',
+        '70': '#FFFFFF70',
+        '80': '#FFFFFF80',
+        '90': '#FFFFFF90',
+      },
+    },
     black: {
       default: '#000000',
       shades: {
@@ -48,16 +61,62 @@ export const ColorThemes: Record<ThemeTypes, ITheme> = {
     brand: {
       default: '#00A6FF',
       shades: {
-        '10': '#0095E5',
-        '20': '#0090DE',
-        '30': '#007ABB',
-        '40': '#00679E',
+        '10': '#00A6FF10',
+        '20': '#00A6FF20',
+        '30': '#00A6FF30',
+        '40': '#00A6FF40',
+        '50': '#00A6FF50',
+        '60': '#00A6FF60',
+        '70': '#00A6FF70',
+        '80': '#00A6FF80',
+        '90': '#00A6FF90',
       },
     },
-    success: { default: '#00CF6C' },
+    success: {
+      default: '#00CF6C',
+      shades: {
+        '10': '#00CF6C10',
+        '20': '#00CF6C20',
+        '30': '#00CF6C30',
+        '40': '#00CF6C40',
+        '50': '#00CF6C50',
+        '60': '#00CF6C60',
+        '70': '#00CF6C70',
+        '80': '#00CF6C80',
+        '90': '#00CF6C90',
+      },
+    },
+    red: {
+      default: '#DB004F',
+      shades: {
+        '10': '#DB004F10',
+        '20': '#DB004F20',
+        '30': '#DB004F30',
+        '40': '#DB004F40',
+        '50': '#DB004F50',
+        '60': '#DB004F60',
+        '70': '#DB004F70',
+        '80': '#DB004F80',
+        '90': '#DB004F90',
+      },
+    },
+    orange: {
+      default: '#CD9300',
+      shades: {
+        '10': '#CD930010',
+        '20': '#CD930020',
+        '30': '#CD930030',
+        '40': '#CD930040',
+        '50': '#CD930050',
+        '60': '#CD930060',
+        '70': '#CD930070',
+        '80': '#CD930080',
+        '90': '#CD930090',
+      },
+    },
   },
   dark: {
-    white: { default: '#FFF' },
+    white: { default: '#FFF', shades: {} },
     black: {
       default: '#000000',
       shades: {
@@ -74,6 +133,7 @@ export const ColorThemes: Record<ThemeTypes, ITheme> = {
     },
     primary: {
       default: '#000',
+      shades: {},
     },
     secondary: {
       default: '',
@@ -95,6 +155,21 @@ export const ColorThemes: Record<ThemeTypes, ITheme> = {
         '40': '',
       },
     },
-    success: { default: '' },
+    success: { default: '', shades: {} },
+    red: { default: '', shades: {} },
+    orange: {
+      default: '#CD9300',
+      shades: {
+        '10': '#CD930010',
+        '20': '#CD930020',
+        '30': '#CD930030',
+        '40': '#CD930040',
+        '50': '#CD930050',
+        '60': '#CD930060',
+        '70': '#CD930070',
+        '80': '#CD930080',
+        '90': '#CD930090',
+      },
+    },
   },
 };

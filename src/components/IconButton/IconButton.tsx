@@ -7,6 +7,7 @@ export const IconButton: React.FC<IIconButtonProps> = ({
   type,
   onClick,
   disabled,
+  className,
   ...iconProps
 }) => {
   const IconComponent = mapIconTypeToComponent[type];
@@ -17,7 +18,7 @@ export const IconButton: React.FC<IIconButtonProps> = ({
   };
 
   return (
-    <Styled.IconButtonStyled onClick={handleClick}>
+    <Styled.IconButtonStyled onClick={handleClick} className={className}>
       <IconComponent {...iconProps} />
     </Styled.IconButtonStyled>
   );
