@@ -5,7 +5,6 @@ export const EditorPageWrapper = styled.div(() => ({
   display: 'flex',
   flexDirection: 'column',
   gap: '10px',
-  flex: '1',
 }));
 
 export const EditPageBody = styled.div(() => ({

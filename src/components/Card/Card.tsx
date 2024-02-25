@@ -3,6 +3,8 @@ import * as Styled from './styled.ts';
 
 import { ICardProps } from './types.ts';
 
-export const Card: React.FC<ICardProps> = ({ children }) => {
-  return <Styled.CardWrapper>{children}</Styled.CardWrapper>;
+export const Card: React.FC<ICardProps> = ({ children, className }) => {
+  return (
+    <Styled.CardStyled className={className}>{children}</Styled.CardStyled>
+  );
 };
