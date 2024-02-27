@@ -17,6 +17,7 @@ export const CodeBlock: React.FC<ICodeBlockProps> = ({ children }) => {
         margin: '10px 0',
         background: current.secondary.shades['10'],
         borderRadius: '5px',
+        display: 'inline-flex',
       }}
     >
       {children}

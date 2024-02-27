@@ -7,7 +7,6 @@ export const AppWrapper = styled.div(({ theme }) => ({
   background: `linear-gradient(180deg, ${theme.current.primary.default} 0%, ${theme.current.brand.default} 100%)`,
   height: '100vh',
   width: '100vw',
-  display: 'flex',
 
   strong: {
     fontWeight: 700,

@@ -8,8 +8,8 @@ export const MarkdownText: React.FC<IMarkdownTextProps> = ({ text }) => {
   if (Array.isArray(text.md)) {
     return (
       <Blockquote isEnabled={text.isBlockquote}>
-        {text.md.map((item) => (
-          <MarkdownText text={item} />
+        {text.md.map((item, index) => (
+          <MarkdownText key={index} text={item} />
         ))}
       </Blockquote>
     );

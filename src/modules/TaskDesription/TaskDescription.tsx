@@ -10,10 +10,11 @@ import { TaskTags } from './components/TaskTags';
 import { TaskText } from './components/TaskText';
 import { TaskTitle } from './components/TaskTitle';
 import * as Styled from './styled.ts';
+import { ITaskDescriptionProps } from './types.ts';
 
-export const TaskDescription: React.FC = () => {
+export const TaskDescription: React.FC<ITaskDescriptionProps> = ({ width }) => {
   return (
-    <Styled.CardStyled>
+    <Styled.CardStyled width={width}>
       <TaskTitle />
       <Separator height={10} />
       <TaskTags tags={mockTaskTags} />
