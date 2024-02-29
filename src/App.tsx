@@ -8,7 +8,7 @@ function App() {
     // eslint-disable-next-line
     // @ts-ignore
     <ThemeProviderWrapper>
-      <AppWrapper>
+      <AppWrapper id="app">
         <Router />
       </AppWrapper>
     </ThemeProviderWrapper>
