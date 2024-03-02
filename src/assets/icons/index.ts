@@ -6,3 +6,4 @@ export * from './SearchIcon.tsx';
 export * from './CrossIcon.tsx';
 export * from './CommentCheckIcon.tsx';
 export * from './DotsIcon.tsx';
+export * from './AngleDownIcon.tsx';

@@ -3,7 +3,7 @@ import {
   TPopoverPosition,
 } from '@src/components/Popover/types.ts';
 import { useOutsideClick } from '@src/hooks/useOutsideClick';
-import React, { useEffect, useRef, useState } from 'react';
+import React, { useMemo, useRef } from 'react';
 import { createPortal } from 'react-dom';
 import * as Styled from './styled.ts';
 
@@ -12,26 +12,30 @@ export const Popover: React.FC<IPopoverProps> = ({
   trigger,
   onOutsideClick,
   isOpened,
+  offsetLeft,
+  offsetTop,
 }) => {
   const app = document.getElementById('app');
   const triggerRef = useRef<HTMLDivElement>(null);
   const contentRef = useRef<HTMLDivElement>(null);
 
-  const [position, setPosition] = useState<TPopoverPosition>({
-    top: 0,
-    left: 0,
-  });
-
-  useEffect(() => {
+  const position: TPopoverPosition = useMemo(() => {
     const element = triggerRef.current;
     if (element) {
       const rect = element.getBoundingClientRect();
-      setPosition({
-        top: rect.top + window.scrollY + element.clientHeight,
-        left: rect.left + window.scrollX,
-      });
+      return {
+        top:
+          rect.top +
+          window.scrollY +
+          element.clientHeight +
+          5 +
+          (offsetTop ?? 0),
+        left: rect.left + window.scrollX + (offsetLeft ?? 0),
+      };
     }
-  }, [isOpened]);
+    return { left: 0, top: 0 };
+    // eslint-disable-next-line
+  }, [isOpened, offsetLeft, offsetTop]);
 
   useOutsideClick([contentRef, triggerRef], () => onOutsideClick?.call(null));
 
