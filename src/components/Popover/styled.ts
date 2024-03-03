@@ -21,4 +21,5 @@ export const PopoverStyled = styled.div<
   transition: `200ms ${BOUNCE_EASE_FN} all`,
   transform: !$isOpened ? 'scale(0.5)' : 'scale(1.0)',
   opacity: !$isOpened ? '0' : '1',
+  pointerEvents: $isOpened ? 'auto' : 'none',
 }));
