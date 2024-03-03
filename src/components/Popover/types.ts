@@ -11,4 +11,5 @@ export interface IPopoverProps extends PropsWithChildren {
 export type TPopoverPosition = {
   top: number;
   left: number;
+  isOpened?: boolean;
 };
