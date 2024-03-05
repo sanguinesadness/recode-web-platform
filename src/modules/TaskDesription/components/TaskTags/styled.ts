@@ -5,6 +5,7 @@ export const TaskTagsStyled = styled.div(() => ({
   display: 'flex',
   flexDirection: 'row',
   gap: '10px',
+  marginBottom: '20px',
 }));
 
 export const TaskTagStyled = styled.div<{ color: IColor }>(({ color }) => ({

@@ -7,6 +7,7 @@ export const TaskTitleStyled = styled.div(() => ({
   display: 'flex',
   alignItems: 'center',
   gap: '15px',
+  marginBottom: '10px',
 }));
 
 export const TaskName = styled.div(({ theme }) => ({

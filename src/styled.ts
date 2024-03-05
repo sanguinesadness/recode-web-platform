@@ -23,6 +23,14 @@ export const AppWrapper = styled.div(({ theme }) => ({
   },
 
   pre: {
+    lineHeight: '22px',
+    fontSize: '14px',
+    padding: '10px',
+    margin: '10px 0',
+    background: theme.current.secondary.shades['10'],
+    borderRadius: '5px',
+    display: 'inline-flex',
+
     code: {
       background: 'none',
       border: 'none',
@@ -35,6 +43,7 @@ export const AppWrapper = styled.div(({ theme }) => ({
   blockquote: {
     position: 'relative',
     padding: '5px 20px',
+    margin: '10px 0',
 
     '&::before': {
       display: 'block',

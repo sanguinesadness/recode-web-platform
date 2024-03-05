@@ -2,6 +2,7 @@ import styled from 'styled-components';
 
 export const TaskAuthorLabelStyled = styled.div(({ theme }) => ({
   color: theme.current.secondary.shades['50'],
+  marginBottom: '15px',
 }));
 
 export const TextAnimatedUnderline = styled.span(({ theme }) => ({
