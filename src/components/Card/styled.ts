@@ -6,3 +6,9 @@ export const CardStyled = styled.div(({ theme }) => ({
   borderRadius: '10px',
   minWidth: '400px',
 }));
+
+export const CardHeader = styled.div(({ theme }) => ({
+  background: theme.current.brand.shades['10'],
+  display: 'flex',
+  zIndex: 10,
+}));

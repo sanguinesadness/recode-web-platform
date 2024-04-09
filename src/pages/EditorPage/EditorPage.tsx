@@ -7,7 +7,7 @@ import { useTheme } from 'styled-components';
 import useResizeObserver from 'use-resize-observer';
 import * as Styled from './styled.ts';
 
-export const Editor: React.FC = () => {
+export const EditorPage: React.FC = () => {
   const { current } = useTheme();
   const { ref, width } = useResizeObserver();
 

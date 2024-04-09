@@ -5,6 +5,8 @@ import {
   HeartSolidIcon,
   HomeIcon,
   InfoIcon,
+  LandscapeIcon,
+  PlusCircleIcon,
   SearchIcon,
 } from '@src/assets';
 import { IIconProps } from '@src/assets/types.ts';
@@ -22,4 +24,6 @@ export const mapIconTypeToComponent: Record<
   [EIconTypes.SEARCH]: SearchIcon,
   [EIconTypes.CROSS]: CrossIcon,
   [EIconTypes.COMMENT_CHECK]: CommentCheckIcon,
+  [EIconTypes.PLUS_CIRCLE]: PlusCircleIcon,
+  [EIconTypes.LANDSCAPE]: LandscapeIcon,
 };

@@ -6,4 +6,6 @@ export enum EIconTypes {
   SEARCH = 'SEARCH',
   CROSS = 'CROSS',
   COMMENT_CHECK = 'COMMENT_CHECK',
+  PLUS_CIRCLE = 'PLUS_CIRCLE',
+  LANDSCAPE = 'LANDSCAPE',
 }

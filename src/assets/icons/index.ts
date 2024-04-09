@@ -8,3 +8,5 @@ export * from './CommentCheckIcon.tsx';
 export * from './DotsIcon.tsx';
 export * from './AngleDownIcon.tsx';
 export * from './PlusIcon.tsx';
+export * from './PlusCircleIcon.tsx';
+export * from './LandscapeIcon.tsx';
