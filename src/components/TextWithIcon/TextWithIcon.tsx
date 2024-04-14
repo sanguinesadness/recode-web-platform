@@ -11,7 +11,7 @@ export const TextWithIcon: React.FC<ITextWithIconProps> = ({
 }) => {
   return (
     <Styled.TextWithIconStyled reversed={reversed}>
-      {iconType ? <Icon type={iconType} /> : <>{icon}</>}
+      {iconType ? <Icon iconType={iconType} /> : <>{icon}</>}
       <Styled.TextWrapper>{text}</Styled.TextWrapper>
     </Styled.TextWithIconStyled>
   );

@@ -33,7 +33,7 @@ export const SearchBar: React.FC<ISearchBarProps> = ({
       <IconButton
         height={20}
         width={20}
-        type={EIconTypes.SEARCH}
+        iconType={EIconTypes.SEARCH}
         color={!isEmpty ? current.primary.shades['90'] : void 0}
       />
       <Styled.SearchBarInput
@@ -47,7 +47,7 @@ export const SearchBar: React.FC<ISearchBarProps> = ({
           onClick={handleResetValue}
           height={20}
           width={20}
-          type={EIconTypes.CROSS}
+          iconType={EIconTypes.CROSS}
         />
       )}
     </Styled.SearchBarStyled>

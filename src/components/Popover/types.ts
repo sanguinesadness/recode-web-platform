@@ -12,4 +12,5 @@ export type TPopoverPosition = {
   top: number;
   left: number;
   isOpened?: boolean;
+  width?: number;
 };

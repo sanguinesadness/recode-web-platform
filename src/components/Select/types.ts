@@ -9,11 +9,14 @@ export interface ISelectProps {
   options: TSelectOption[];
   onChange?: (value: string) => void;
   value?: string;
+  label?: string;
+  placeholder?: string;
+  required?: boolean;
   customTrigger?: ReactNode;
-  fullWidth?: boolean;
 }
 
 export interface ISelectOptionProps {
   option: TSelectOption;
   onClick: VoidFunction;
+  isSelected: boolean;
 }

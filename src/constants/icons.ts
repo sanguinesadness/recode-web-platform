@@ -8,4 +8,7 @@ export enum EIconTypes {
   COMMENT_CHECK = 'COMMENT_CHECK',
   PLUS_CIRCLE = 'PLUS_CIRCLE',
   LANDSCAPE = 'LANDSCAPE',
+  APPS_ADD = 'APPS_ADD',
+  CHECK = 'CHECK',
+  HARD = 'HARD',
 }

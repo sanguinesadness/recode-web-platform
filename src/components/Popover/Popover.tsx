@@ -19,12 +19,13 @@ export const Popover: React.FC<IPopoverProps> = ({
   const app = document.getElementById('app');
   const contentRef = useRef<HTMLDivElement>(null);
 
-  const [triggerRect, setTriggerRect] = useState<Pick<DOMRect, 'left' | 'top'>>(
-    {
-      left: 0,
-      top: 0,
-    },
-  );
+  const [triggerRect, setTriggerRect] = useState<
+    Pick<DOMRect, 'left' | 'top' | 'width'>
+  >({
+    left: 0,
+    top: 0,
+    width: 0,
+  });
   const [triggerElement, setTriggerElement] = useState<HTMLDivElement | null>(
     null,
   );
@@ -43,6 +44,8 @@ export const Popover: React.FC<IPopoverProps> = ({
           5 +
           (offsetTop ?? 0),
         left: triggerRect.left + window.scrollY + (offsetLeft ?? 0),
+        // Minus 20 because of horizontal padding (10px each side)
+        width: triggerRect.width - 20,
       };
     }
     return { left: 0, top: 0 };
@@ -73,6 +76,7 @@ export const Popover: React.FC<IPopoverProps> = ({
           $isOpened={isOpened}
           top={position.top}
           left={position.left}
+          width={position.width}
         >
           {children}
         </Styled.PopoverStyled>,

@@ -2,8 +2,7 @@ import { IIconComponentProps } from '@src/components/Icon/types.ts';
 import { mapIconTypeToComponent } from '@src/utils';
 import React from 'react';
 
-// TODO: think abouut it...
-export const Icon: React.FC<IIconComponentProps> = ({ type, ...props }) => {
-  const IconComponent = mapIconTypeToComponent[type];
+export const Icon: React.FC<IIconComponentProps> = ({ iconType, ...props }) => {
+  const IconComponent = mapIconTypeToComponent[iconType];
   return <IconComponent {...props} />;
 };

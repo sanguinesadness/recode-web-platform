@@ -14,14 +14,14 @@ export const TaskTitle: React.FC = () => {
 
   return (
     <Styled.TaskTitleStyled>
-      <Icon type={EIconTypes.COMMENT_CHECK} />
+      <Icon iconType={EIconTypes.COMMENT_CHECK} />
       <Styled.TaskName>Two sum</Styled.TaskName>
       <Styled.TaskCode>#ekr9h</Styled.TaskCode>
       <Styled.LikeButton
         width={26}
         height={26}
         onClick={toggleLike}
-        type={isLiked ? EIconTypes.HEART_SOLID : EIconTypes.HEART}
+        iconType={isLiked ? EIconTypes.HEART_SOLID : EIconTypes.HEART}
         color={current.red.default}
       />
     </Styled.TaskTitleStyled>

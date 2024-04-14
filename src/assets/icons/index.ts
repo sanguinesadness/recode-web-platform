@@ -10,3 +10,6 @@ export * from './AngleDownIcon.tsx';
 export * from './PlusIcon.tsx';
 export * from './PlusCircleIcon.tsx';
 export * from './LandscapeIcon.tsx';
+export * from './AppsAddIcon.tsx';
+export * from './HardIcon.tsx';
+export * from './CheckIcon.tsx';

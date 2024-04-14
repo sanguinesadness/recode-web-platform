@@ -3,7 +3,7 @@ import { EIconTypes } from '@src/constants';
 
 export interface IIconButtonProps extends IIconProps {
   onClick?: VoidFunction;
-  type: EIconTypes;
+  iconType: EIconTypes;
   disabled?: boolean;
   className?: string;
 }

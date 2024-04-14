@@ -9,9 +9,11 @@ import { ISelectProps, TSelectOption } from './types.ts';
 export const Select: React.FC<ISelectProps> = ({
   options,
   value,
+  required,
+  label,
+  placeholder,
   onChange,
   customTrigger,
-  fullWidth,
 }) => {
   const { current } = useTheme();
   const [isOpened, setIsOpened] = useState<boolean>(false);
@@ -46,17 +48,24 @@ export const Select: React.FC<ISelectProps> = ({
           <div onClick={handleOpenedToggle}>{customTrigger}</div>
         ) : (
           <Styled.SelectStyled
+            label={label}
+            required={required}
             onClick={handleOpenedToggle}
-            fullWidth={fullWidth}
           >
-            <div>{selectedOption?.label ?? 'не выбрано'}</div>
-            <Styled.IconWrapper $rotated={isOpened}>
+            {selectedOption?.label ? (
+              <div>{selectedOption.label}</div>
+            ) : (
+              <Styled.SelectPlaceholder>
+                {placeholder ?? 'Select option'}
+              </Styled.SelectPlaceholder>
+            )}
+            <Styled.SelectIconWrapper $rotated={isOpened}>
               <AngleDownIcon
                 color={current.secondary.default}
                 width={12}
                 height={12}
               />
-            </Styled.IconWrapper>
+            </Styled.SelectIconWrapper>
           </Styled.SelectStyled>
         )
       }
@@ -65,6 +74,7 @@ export const Select: React.FC<ISelectProps> = ({
         {options.map((option: TSelectOption) => (
           <SelectOption
             key={option.value}
+            isSelected={selectedValue === option.value}
             option={option}
             onClick={() => handleOptionSelect(option.value)}
           />

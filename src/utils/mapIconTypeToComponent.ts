@@ -1,6 +1,9 @@
 import {
+  AppsAddIcon,
+  CheckIcon,
   CommentCheckIcon,
   CrossIcon,
+  HardIcon,
   HeartIcon,
   HeartSolidIcon,
   HomeIcon,
@@ -26,4 +29,7 @@ export const mapIconTypeToComponent: Record<
   [EIconTypes.COMMENT_CHECK]: CommentCheckIcon,
   [EIconTypes.PLUS_CIRCLE]: PlusCircleIcon,
   [EIconTypes.LANDSCAPE]: LandscapeIcon,
+  [EIconTypes.APPS_ADD]: AppsAddIcon,
+  [EIconTypes.HARD]: HardIcon,
+  [EIconTypes.CHECK]: CheckIcon,
 };

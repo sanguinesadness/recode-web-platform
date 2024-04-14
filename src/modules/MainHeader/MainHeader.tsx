@@ -25,9 +25,9 @@ export const MainHeader: React.FC = () => {
           onSubmit={console.log}
         />
         <Styled.Actions>
-          <IconButton height={26} width={26} type={EIconTypes.HOME} />
-          <IconButton height={26} width={26} type={EIconTypes.HEART} />
-          <IconButton height={26} width={26} type={EIconTypes.INFO} />
+          <IconButton height={26} width={26} iconType={EIconTypes.HOME} />
+          <IconButton height={26} width={26} iconType={EIconTypes.HEART} />
+          <IconButton height={26} width={26} iconType={EIconTypes.INFO} />
         </Styled.Actions>
         <Styled.ProfileImgWrapper>
           <img src="src/assets/__mock__/person.jpeg" alt="profile picture" />

@@ -4,13 +4,13 @@ import * as Styled from './styled.ts';
 import { IIconButtonProps } from './types.ts';
 
 export const IconButton: React.FC<IIconButtonProps> = ({
-  type,
+  iconType,
   onClick,
   disabled,
   className,
   ...iconProps
 }) => {
-  const IconComponent = mapIconTypeToComponent[type];
+  const IconComponent = mapIconTypeToComponent[iconType];
 
   const handleClick = (): void => {
     if (disabled) return;
