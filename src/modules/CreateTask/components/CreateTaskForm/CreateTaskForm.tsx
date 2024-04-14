@@ -29,6 +29,12 @@ export const CreateTaskForm: React.FC = () => {
           options={LanguageSelectOptions}
         />
       </Styled.FormRow>
+      <Select
+        label="Tags"
+        placeholder="Choose up to 10 tags..."
+        required
+        options={[]}
+      />
     </Styled.CreateTaskFormStyled>
   );
 };

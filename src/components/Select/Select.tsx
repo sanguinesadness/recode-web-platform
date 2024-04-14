@@ -70,16 +70,20 @@ export const Select: React.FC<ISelectProps> = ({
         )
       }
     >
-      <Styled.SelectOptionsList>
-        {options.map((option: TSelectOption) => (
-          <SelectOption
-            key={option.value}
-            isSelected={selectedValue === option.value}
-            option={option}
-            onClick={() => handleOptionSelect(option.value)}
-          />
-        ))}
-      </Styled.SelectOptionsList>
+      {options.length > 0 ? (
+        <Styled.SelectOptionsList>
+          {options.map((option: TSelectOption) => (
+            <SelectOption
+              key={option.value}
+              isSelected={selectedValue === option.value}
+              option={option}
+              onClick={() => handleOptionSelect(option.value)}
+            />
+          ))}
+        </Styled.SelectOptionsList>
+      ) : (
+        <Styled.EmptyView>Nothing to show :(</Styled.EmptyView>
+      )}
     </Popover>
   );
 };

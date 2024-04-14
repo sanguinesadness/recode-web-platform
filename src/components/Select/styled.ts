@@ -1,4 +1,5 @@
 import { FieldWrapper } from '@src/components/FieldWrapper';
+import { FlexCentered } from '@src/constants';
 import styled from 'styled-components';
 
 export const SelectStyled = styled(FieldWrapper)(() => ({
@@ -54,3 +55,12 @@ export const SelectIconWrapper = styled.div<{ $rotated?: boolean }>(
     },
   }),
 );
+
+export const EmptyView = styled(FlexCentered)(({ theme }) => ({
+  padding: '10px',
+  color: theme.current.secondary.default,
+  fontFamily: '"Rubik Glitch", system-ui',
+  fontSize: '18px',
+  fontWeight: 400,
+  fontStyle: 'normal',
+}));
