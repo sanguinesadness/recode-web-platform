@@ -11,3 +11,8 @@ export const FormRow = styled.div(() => ({
   flexDirection: 'row',
   gap: '20px',
 }));
+
+export const ComplexitySelectOption = styled.div(() => ({
+  display: 'flex',
+  gap: '15px',
+}));

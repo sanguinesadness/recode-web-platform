@@ -2,7 +2,7 @@ import { ReactNode } from 'react';
 
 export type TSelectOption = {
   value: string;
-  label: string;
+  label: ReactNode;
 } & Record<string, unknown>;
 
 export interface ISelectProps {

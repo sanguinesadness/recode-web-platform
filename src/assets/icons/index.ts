@@ -11,5 +11,7 @@ export * from './PlusIcon.tsx';
 export * from './PlusCircleIcon.tsx';
 export * from './LandscapeIcon.tsx';
 export * from './AppsAddIcon.tsx';
-export * from './HardIcon.tsx';
+export * from './HardComplexityIcon.tsx';
+export * from './MediumComplexityIcon.tsx';
+export * from './EasyComplexityIcon.tsx';
 export * from './CheckIcon.tsx';

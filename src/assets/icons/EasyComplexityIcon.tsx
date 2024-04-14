@@ -3,9 +3,9 @@ import { FlexCentered } from '@src/constants';
 import React from 'react';
 import { useTheme } from 'styled-components';
 
-export const HardIcon: React.FC<IIconProps> = ({ width, height }) => {
+export const EasyComplexityIcon: React.FC<IIconProps> = ({ width, height }) => {
   const { current } = useTheme();
-  const barColor = current.red.default;
+  const barColor = current.success.default;
 
   return (
     <FlexCentered>
@@ -17,7 +17,7 @@ export const HardIcon: React.FC<IIconProps> = ({ width, height }) => {
         xmlns="http://www.w3.org/2000/svg"
       >
         <mask
-          id="mask0_889_1495"
+          id="mask0_889_1487"
           style={{ maskType: 'alpha' }}
           maskUnits="userSpaceOnUse"
           x="0"
@@ -34,7 +34,7 @@ export const HardIcon: React.FC<IIconProps> = ({ width, height }) => {
             fill="#EEEEEE"
           />
         </mask>
-        <g mask="url(#mask0_889_1495)">
+        <g mask="url(#mask0_889_1487)">
           <rect
             x="40"
             width="10"
@@ -45,10 +45,10 @@ export const HardIcon: React.FC<IIconProps> = ({ width, height }) => {
             fillOpacity="0.12"
           />
           <rect
-            x="30"
+            x="10"
             width="10"
-            height="30"
-            transform="rotate(90 30 0)"
+            height="10"
+            transform="rotate(90 10 0)"
             fill={barColor}
           />
         </g>
