@@ -1,4 +1,3 @@
-import { ActionStyled } from '@src/components/Action';
 import styled from 'styled-components';
 
 export const CardContent = styled.div(() => ({
@@ -10,7 +9,8 @@ export const CardContent = styled.div(() => ({
   height: '60px',
 }));
 
-export const LogoStyled = styled(ActionStyled)(() => ({
+export const LogoStyled = styled.div(() => ({
+  cursor: 'pointer',
   padding: '5px',
 }));
 

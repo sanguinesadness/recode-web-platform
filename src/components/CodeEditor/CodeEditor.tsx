@@ -5,6 +5,7 @@ import { ICodeEditorProps } from './types.ts';
 
 export const CodeEditor: React.FC<ICodeEditorProps> = ({
   className,
+  options,
   ...props
 }) => {
   return (
@@ -12,10 +13,11 @@ export const CodeEditor: React.FC<ICodeEditorProps> = ({
       className={className}
       extensions={[javascript({ jsx: true })]}
       basicSetup={{
-        highlightActiveLine: false,
+        highlightActiveLine: true,
         highlightActiveLineGutter: true,
         lineNumbers: true,
         foldGutter: true,
+        ...options,
       }}
       {...props}
     />

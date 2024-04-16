@@ -1,5 +1,18 @@
 import { PropsWithChildren } from 'react';
 
+export type TButtonType =
+  | 'success'
+  | 'secondary'
+  | 'primary'
+  | 'brand'
+  | 'alert'
+  | 'warning';
+
 export interface IButtonProps extends PropsWithChildren {
-  type: 'primary' | 'secondary';
+  type?: TButtonType;
 }
+
+export type TButtonColors = {
+  textColor: string;
+  bgColor: string;
+};

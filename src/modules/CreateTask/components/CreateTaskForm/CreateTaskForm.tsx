@@ -1,4 +1,6 @@
+import { Button } from '@src/components/Button';
 import { CodeArea } from '@src/components/CodeArea';
+import { FormButtons } from '@src/components/FormButtons';
 import { Select } from '@src/components/Select';
 import { TextArea } from '@src/components/TextArea';
 import { TextInput } from '@src/components/TextInput';
@@ -49,6 +51,15 @@ export const CreateTaskForm: React.FC = () => {
         placeholder="// Here you can write some comments,
 // definitions for classes, tips and so on."
         minHeight="400px"
+        options={{
+          highlightActiveLineGutter: false,
+          highlightActiveLine: false,
+        }}
+      />
+      <FormButtons
+        cancelButton={<Button type="secondary">Reset</Button>}
+        secondaryButton={<Button type="brand">Save</Button>}
+        primaryButton={<Button type="success">Save and Send</Button>}
       />
     </Styled.CreateTaskFormStyled>
   );
