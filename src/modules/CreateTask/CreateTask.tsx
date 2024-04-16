@@ -7,6 +7,7 @@ import * as Styled from './styled.ts';
 export const CreateTask: React.FC = () => {
   return (
     <Styled.CardStyled
+      flex={3}
       headerContent={
         <Styled.CardHeader>
           <TextWithIcon text="Create a Task" iconType={EIconTypes.APPS_ADD} />

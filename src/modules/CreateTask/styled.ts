@@ -1,8 +1,12 @@
 import { Card } from '@src/components/Card';
 import styled from 'styled-components';
 
-export const CardStyled = styled(Card)(() => ({
-  flex: 3,
+export const CardStyled = styled(Card)<{ flex?: number }>(({ flex }) => ({
+  flex: flex,
+  overflow: 'scroll',
+  maxHeight: 'calc(100vh - 90px)',
+  msOverflowStyle: 'none',
+  scrollbarWidth: 'none',
 }));
 
 export const CardBody = styled.div(() => ({

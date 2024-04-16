@@ -1,4 +1,5 @@
 import { Select } from '@src/components/Select';
+import { TextArea } from '@src/components/TextArea';
 import { TextInput } from '@src/components/TextInput';
 import React from 'react';
 import {
@@ -34,6 +35,14 @@ export const CreateTaskForm: React.FC = () => {
         placeholder="Choose up to 10 tags..."
         required
         options={[]}
+      />
+      <TextArea
+        required
+        label="Description"
+        placeholder="Describe your cool task here. Do not forget to include links, some notes,
+blocks of code, quotes etc. "
+        rows={20}
+        maxLength={2000}
       />
     </Styled.CreateTaskFormStyled>
   );

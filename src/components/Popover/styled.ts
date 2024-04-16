@@ -23,4 +23,5 @@ export const PopoverStyled = styled.div<
   transform: !$isOpened ? 'scale(0.5)' : 'scale(1.0)',
   opacity: !$isOpened ? '0' : '1',
   pointerEvents: $isOpened ? 'auto' : 'none',
+  zIndex: 100,
 }));
