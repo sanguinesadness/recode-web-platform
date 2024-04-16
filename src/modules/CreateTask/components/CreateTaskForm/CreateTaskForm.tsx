@@ -1,3 +1,4 @@
+import { CodeArea } from '@src/components/CodeArea';
 import { Select } from '@src/components/Select';
 import { TextArea } from '@src/components/TextArea';
 import { TextInput } from '@src/components/TextInput';
@@ -39,10 +40,15 @@ export const CreateTaskForm: React.FC = () => {
       <TextArea
         required
         label="Description"
-        placeholder="Describe your cool task here. Do not forget to include links, some notes,
-blocks of code, quotes etc. "
+        placeholder="Describe your cool task here. Do not forget to include links, some notes, blocks of code, quotes etc. "
         rows={20}
         maxLength={2000}
+      />
+      <CodeArea
+        label="Code"
+        placeholder="// Here you can write some comments,
+// definitions for classes, tips and so on."
+        minHeight="400px"
       />
     </Styled.CreateTaskFormStyled>
   );

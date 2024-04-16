@@ -12,7 +12,7 @@ export const CodeEditor: React.FC<ICodeEditorProps> = ({
       className={className}
       extensions={[javascript({ jsx: true })]}
       basicSetup={{
-        highlightActiveLine: true,
+        highlightActiveLine: false,
         highlightActiveLineGutter: true,
         lineNumbers: true,
         foldGutter: true,

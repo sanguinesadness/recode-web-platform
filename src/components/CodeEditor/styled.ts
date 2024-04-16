@@ -14,4 +14,9 @@ export const CodeEditorStyled = styled(CodeMirror)(({ theme }) => ({
     paddingRight: '8px',
     color: theme.current.secondary.shades['50'],
   },
+
+  '.cm-placeholder': {
+    color: theme.current.secondary.shades['80'],
+    fontSize: '14px',
+  },
 }));
