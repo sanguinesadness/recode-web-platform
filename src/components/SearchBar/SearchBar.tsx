@@ -7,6 +7,7 @@ import * as Styled from './styled.ts';
 
 export const SearchBar: React.FC<ISearchBarProps> = ({
   onSubmit,
+  isHoverEffect = false,
   ...props
 }) => {
   const [value, setValue] = useState<string>('');
@@ -29,7 +30,11 @@ export const SearchBar: React.FC<ISearchBarProps> = ({
   };
 
   return (
-    <Styled.SearchBarStyled $isEmpty={isEmpty} onKeyDown={handleKeyDown}>
+    <Styled.SearchBarStyled
+      $isEmpty={isEmpty}
+      $isHoverEffect={isHoverEffect}
+      onKeyDown={handleKeyDown}
+    >
       <IconButton
         height={20}
         width={20}

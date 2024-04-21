@@ -2,6 +2,8 @@ import { Button } from '@src/components/Button';
 import { CodeArea } from '@src/components/CodeArea';
 import { FormButtons } from '@src/components/FormButtons';
 import { Select } from '@src/components/Select';
+import { TagsSelect } from '@src/components/TagsSelect';
+import { mockTaskTags } from '@src/components/TagsSelect/__mocks__/constants.ts';
 import { TextArea } from '@src/components/TextArea';
 import { TextInput } from '@src/components/TextInput';
 import React from 'react';
@@ -22,7 +24,7 @@ export const CreateTaskForm: React.FC = () => {
       <Styled.FormRow>
         <Select
           label="Complexity"
-          placeholder="How hard it'll be?"
+          placeholder="How hard will it be?"
           required
           options={complexitySelectOptions}
         />
@@ -33,11 +35,11 @@ export const CreateTaskForm: React.FC = () => {
           options={LanguageSelectOptions}
         />
       </Styled.FormRow>
-      <Select
+      <TagsSelect
         label="Tags"
         placeholder="Choose up to 10 tags..."
         required
-        options={[]}
+        tags={mockTaskTags}
       />
       <TextArea
         required

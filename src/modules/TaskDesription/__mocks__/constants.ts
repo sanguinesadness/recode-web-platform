@@ -1,6 +1,6 @@
-import { ITaskTag } from '../components/TaskTags/types.ts';
+import { ITag } from '@src/models/tags';
 
-export const mockTaskTags: ITaskTag[] = [
+export const mockTaskTags: ITag[] = [
   {
     id: 'tag-1',
     text: 'easy',

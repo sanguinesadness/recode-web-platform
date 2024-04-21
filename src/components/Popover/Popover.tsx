@@ -3,7 +3,14 @@ import {
   TPopoverPosition,
 } from '@src/components/Popover/types.ts';
 import { useOutsideClick } from '@src/hooks/useOutsideClick';
-import React, { useCallback, useMemo, useRef, useState } from 'react';
+import { findScrollableParent } from '@src/utils/findScrollableParent.ts';
+import React, {
+  useCallback,
+  useEffect,
+  useMemo,
+  useRef,
+  useState,
+} from 'react';
 import { createPortal } from 'react-dom';
 import useResizeObserver from 'use-resize-observer';
 import * as Styled from './styled.ts';
@@ -54,16 +61,34 @@ export const Popover: React.FC<IPopoverProps> = ({
 
   useOutsideClick(
     [contentRef, triggerElement],
-    () => onOutsideClick?.call(null),
+    () => onOutsideClick?.call(null, triggerElement),
   );
 
-  useResizeObserver<HTMLElement>({
-    ref: app,
+  useResizeObserver<HTMLDivElement>({
+    ref: triggerElement,
     onResize: () => {
       const rect = triggerElement?.getBoundingClientRect();
-      if (rect) setTriggerRect(rect);
+      rect && setTriggerRect(rect);
     },
   });
+
+  useEffect(() => {
+    if (!triggerElement) {
+      return;
+    }
+
+    const handleScroll = () => {
+      const rect = triggerElement?.getBoundingClientRect();
+      rect && setTriggerRect(rect);
+    };
+
+    const scrollableParent = findScrollableParent(triggerElement);
+    scrollableParent?.addEventListener('scroll', handleScroll);
+
+    return () => {
+      scrollableParent?.removeEventListener('scroll', handleScroll);
+    };
+  }, [triggerElement]);
 
   return (
     <>

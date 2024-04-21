@@ -3,6 +3,10 @@ import { Popover } from '@src/components/Popover';
 import { SelectOption } from '@src/components/Select/SelectOption.tsx';
 import React, { useMemo, useState } from 'react';
 import { useTheme } from 'styled-components';
+import {
+  DEFAULT_SELECT_PLACEHOLDER,
+  EMPTY_SELECT_RESULT_TEXT,
+} from './constants.ts';
 import * as Styled from './styled.ts';
 import { ISelectProps, TSelectOption } from './types.ts';
 
@@ -47,7 +51,7 @@ export const Select: React.FC<ISelectProps> = ({
         customTrigger ? (
           <div onClick={handleOpenedToggle}>{customTrigger}</div>
         ) : (
-          <Styled.SelectStyled
+          <Styled.FieldWrapperStyled
             label={label}
             required={required}
             onClick={handleOpenedToggle}
@@ -56,7 +60,7 @@ export const Select: React.FC<ISelectProps> = ({
               <div>{selectedOption.label}</div>
             ) : (
               <Styled.SelectPlaceholder>
-                {placeholder ?? 'Select option'}
+                {placeholder ?? DEFAULT_SELECT_PLACEHOLDER}
               </Styled.SelectPlaceholder>
             )}
             <Styled.SelectIconWrapper $rotated={isOpened}>
@@ -66,7 +70,7 @@ export const Select: React.FC<ISelectProps> = ({
                 height={12}
               />
             </Styled.SelectIconWrapper>
-          </Styled.SelectStyled>
+          </Styled.FieldWrapperStyled>
         )
       }
     >
@@ -82,7 +86,7 @@ export const Select: React.FC<ISelectProps> = ({
           ))}
         </Styled.SelectOptionsList>
       ) : (
-        <Styled.EmptyView>Nothing to show :(</Styled.EmptyView>
+        <Styled.EmptyView>{EMPTY_SELECT_RESULT_TEXT}</Styled.EmptyView>
       )}
     </Popover>
   );

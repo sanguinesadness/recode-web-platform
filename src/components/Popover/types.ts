@@ -3,7 +3,7 @@ import { PropsWithChildren, ReactNode } from 'react';
 export interface IPopoverProps extends PropsWithChildren {
   trigger: ReactNode;
   isOpened: boolean;
-  onOutsideClick?: VoidFunction;
+  onOutsideClick?: (element: HTMLDivElement | null) => void;
   offsetTop?: number;
   offsetLeft?: number;
 }

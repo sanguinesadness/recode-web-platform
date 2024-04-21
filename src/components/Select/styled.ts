@@ -2,7 +2,7 @@ import { FieldWrapper } from '@src/components/FieldWrapper';
 import { FlexCentered } from '@src/constants';
 import styled from 'styled-components';
 
-export const SelectStyled = styled(FieldWrapper)(() => ({
+export const FieldWrapperStyled = styled(FieldWrapper)(() => ({
   alignItems: 'center',
   justifyContent: 'space-between',
   gap: '15px',

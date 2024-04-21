@@ -22,6 +22,7 @@ export const MainHeader: React.FC = () => {
         </Styled.LogoStyled>
         <SearchBar
           placeholder="dependency injection tasks"
+          isHoverEffect
           onSubmit={console.log}
         />
         <Styled.Actions>

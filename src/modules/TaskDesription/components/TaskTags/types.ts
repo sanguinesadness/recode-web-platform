@@ -1,13 +1,5 @@
-import { ITheme } from '@src/types';
-
-export interface ITaskTag {
-  id: string;
-  text: string;
-  color: keyof ITheme;
-}
-
-export type TTaskTagProps = Omit<ITaskTag, 'id'>;
+import { ITag } from '@src/models/tags';
 
 export interface ITaskTagsProps {
-  tags: ITaskTag[];
+  tags: ITag[];
 }
