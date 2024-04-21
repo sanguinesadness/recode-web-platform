@@ -8,3 +8,8 @@ export const MarkdownTextStyled = styled(Markdown)(() => ({
     padding: '4px 0',
   },
 }));
+
+export const ImgStyled = styled.img(() => ({
+  borderRadius: '10px',
+  maxWidth: '70%',
+}));

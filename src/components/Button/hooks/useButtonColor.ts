@@ -1,13 +1,13 @@
 import { IColor } from '@src/types';
 import { useMemo } from 'react';
 import { useTheme } from 'styled-components';
-import { TButtonType } from '../types.ts';
+import { TButtonColorType } from '../types.ts';
 
-export const useButtonColor = (type: TButtonType): IColor => {
+export const useButtonColor = (type: TButtonColorType): IColor => {
   const { current } = useTheme();
 
   const mapper = useMemo(
-    (): Record<TButtonType, IColor> => ({
+    (): Record<TButtonColorType, IColor> => ({
       success: current.success,
       secondary: current.secondary,
       alert: current.red,

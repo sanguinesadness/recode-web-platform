@@ -1,6 +1,6 @@
-import { PropsWithChildren } from 'react';
+import { ButtonHTMLAttributes, PropsWithChildren } from 'react';
 
-export type TButtonType =
+export type TButtonColorType =
   | 'success'
   | 'secondary'
   | 'primary'
@@ -8,11 +8,7 @@ export type TButtonType =
   | 'alert'
   | 'warning';
 
-export interface IButtonProps extends PropsWithChildren {
-  type?: TButtonType;
-}
-
-export type TButtonColors = {
-  textColor: string;
-  bgColor: string;
-};
+export type TButtonProps = {
+  colorType?: TButtonColorType;
+} & PropsWithChildren &
+  ButtonHTMLAttributes<HTMLButtonElement>;

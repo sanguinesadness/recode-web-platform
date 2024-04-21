@@ -1,6 +1,6 @@
 import styled from 'styled-components';
 
-export const CreateTaskFormStyled = styled.div(() => ({
+export const CreateTaskFormStyled = styled.form(() => ({
   display: 'flex',
   flexDirection: 'column',
   gap: '30px',

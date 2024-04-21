@@ -1,9 +1,13 @@
+import { MarkdownText } from '@src/components/MarkdownText';
 import { TextWithIcon } from '@src/components/TextWithIcon';
 import { EIconTypes } from '@src/constants';
+import { useCreateTaskStore } from '@src/stores/createTask';
 import React from 'react';
 import * as Styled from '../CreateTask/styled.ts';
 
 export const TaskPreview: React.FC = () => {
+  const { description } = useCreateTaskStore((state) => state);
+
   return (
     <Styled.CardStyled
       flex={4}
@@ -13,7 +17,9 @@ export const TaskPreview: React.FC = () => {
         </Styled.CardHeader>
       }
     >
-      <Styled.CardBody>hello world</Styled.CardBody>
+      <Styled.CardBody>
+        <MarkdownText text={description} />
+      </Styled.CardBody>
     </Styled.CardStyled>
   );
 };

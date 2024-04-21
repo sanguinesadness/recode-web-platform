@@ -1,10 +1,20 @@
 import { TextWithIcon } from '@src/components/TextWithIcon';
 import { EIconTypes } from '@src/constants';
+import {
+  ICreateTaskStoreValues,
+  useCreateTaskStore,
+} from '@src/stores/createTask';
 import React from 'react';
 import { CreateTaskForm } from './components/CreateTaskForm';
 import * as Styled from './styled.ts';
 
 export const CreateTask: React.FC = () => {
+  const setFormValues = useCreateTaskStore((state) => state.setValues);
+
+  const handleChangeFormValues = (values: ICreateTaskStoreValues) => {
+    setFormValues(values);
+  };
+
   return (
     <Styled.CardStyled
       flex={3}
@@ -15,7 +25,7 @@ export const CreateTask: React.FC = () => {
       }
     >
       <Styled.CardBody>
-        <CreateTaskForm />
+        <CreateTaskForm onValuesChange={handleChangeFormValues} />
       </Styled.CardBody>
     </Styled.CardStyled>
   );

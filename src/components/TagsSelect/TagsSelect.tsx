@@ -2,7 +2,6 @@ import { AngleDownIcon } from '@src/assets';
 import { Popover } from '@src/components/Popover';
 import { SearchBar } from '@src/components/SearchBar';
 import { Tag } from '@src/components/Tag';
-import { ITag } from '@src/models/tags';
 import React, { useCallback, useEffect, useMemo, useState } from 'react';
 import { useTheme } from 'styled-components';
 import {
@@ -15,6 +14,7 @@ import { ITagsSelectProps } from './types.ts';
 export const TagsSelect: React.FC<ITagsSelectProps> = ({
   tags,
   required,
+  values: initialTagsIds,
   label,
   placeholder,
   onChange,
@@ -23,11 +23,16 @@ export const TagsSelect: React.FC<ITagsSelectProps> = ({
   const { current } = useTheme();
   const [isOpened, setIsOpened] = useState<boolean>(false);
 
-  const [selectedTags, setSelectedTags] = useState<ITag[]>([]);
+  const [selectedTagsIds, setSelectedTagsIds] =
+    useState<string[]>(initialTagsIds);
+
+  const selectedTags = useMemo(() => {
+    return tags.filter((tag) => selectedTagsIds.includes(tag.id));
+  }, [selectedTagsIds]);
+
   const availableTags = useMemo(() => {
-    const selectedTagsIds = selectedTags.map((tag) => tag.id);
     return tags.filter((tag) => !selectedTagsIds.includes(tag.id));
-  }, [selectedTags, tags]);
+  }, [selectedTagsIds, tags]);
 
   const handleToggleOpened = (e: React.MouseEvent<HTMLDivElement>) => {
     const elementAttrs = (e.target as HTMLDivElement).attributes;
@@ -38,19 +43,23 @@ export const TagsSelect: React.FC<ITagsSelectProps> = ({
     setIsOpened((prev) => !prev);
   };
 
-  const addToSelected = useCallback((tag: ITag) => {
-    setSelectedTags((prev) => [...prev, tag]);
+  const addToSelected = useCallback((tagId: string) => {
+    setSelectedTagsIds((prev) => [...prev, tagId]);
   }, []);
 
-  const removeFromSelected = useCallback((tag: ITag) => {
-    setSelectedTags((prev) => prev.filter((_tag) => _tag.id !== tag.id));
+  const removeFromSelected = useCallback((tagId: string) => {
+    setSelectedTagsIds((prev) => prev.filter((id) => tagId !== id));
   }, []);
 
   const handleClose = () => setIsOpened(false);
 
   useEffect(() => {
-    onChange?.(availableTags);
-  }, [availableTags]);
+    onChange?.(selectedTagsIds);
+  }, [selectedTagsIds]);
+
+  useEffect(() => {
+    setSelectedTagsIds(initialTagsIds);
+  }, [initialTagsIds.length]);
 
   return (
     <Popover
@@ -72,7 +81,7 @@ export const TagsSelect: React.FC<ITagsSelectProps> = ({
                   <Tag
                     key={tag.id}
                     {...tag}
-                    onClick={() => removeFromSelected(tag)}
+                    onClick={() => removeFromSelected(tag.id)}
                   />
                 ))}
               </Styled.TagsList>
@@ -96,7 +105,7 @@ export const TagsSelect: React.FC<ITagsSelectProps> = ({
       <Styled.TagsGrid>
         {availableTags.length > 0 ? (
           availableTags.map((tag) => (
-            <Tag key={tag.id} onClick={() => addToSelected(tag)} {...tag} />
+            <Tag key={tag.id} onClick={() => addToSelected(tag.id)} {...tag} />
           ))
         ) : (
           <Styled.EmptyTagsListMessage>

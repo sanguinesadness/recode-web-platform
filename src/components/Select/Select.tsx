@@ -1,7 +1,7 @@
 import { AngleDownIcon } from '@src/assets';
 import { Popover } from '@src/components/Popover';
 import { SelectOption } from '@src/components/Select/SelectOption.tsx';
-import React, { useMemo, useState } from 'react';
+import React, { useEffect, useMemo, useState } from 'react';
 import { useTheme } from 'styled-components';
 import {
   DEFAULT_SELECT_PLACEHOLDER,
@@ -24,6 +24,10 @@ export const Select: React.FC<ISelectProps> = ({
   const [selectedValue, setSelectedValue] = useState<string | null>(
     value ?? null,
   );
+
+  useEffect(() => {
+    setSelectedValue(value ?? null);
+  }, [value]);
 
   const selectedOption: TSelectOption | null = useMemo(
     () => options.find((option) => option.value === selectedValue) ?? null,

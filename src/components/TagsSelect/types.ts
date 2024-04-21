@@ -3,7 +3,8 @@ import { ReactNode } from 'react';
 
 export interface ITagsSelectProps {
   tags: ITag[];
-  onChange?: (tags: ITag[]) => void;
+  values: string[];
+  onChange?: (tagsIds: string[]) => void;
   label?: string;
   placeholder?: string;
   required?: boolean;

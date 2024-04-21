@@ -33,7 +33,7 @@ export const complexitySelectOptions: TSelectOption[] = [
   },
 ];
 
-export const LanguageSelectOptions: TSelectOption[] = [
+export const languageSelectOptions: TSelectOption[] = [
   {
     value: 'javascript',
     label: 'Javascript',
