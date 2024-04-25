@@ -12,6 +12,13 @@ export const AppWrapper = styled.div(({ theme }) => ({
     fontWeight: 700,
   },
 
+  a: {
+    textDecoration: 'none',
+    position: 'relative',
+    outline: 'none',
+    cursor: 'pointer',
+  },
+
   code: {
     fontFamily: '"Fira Mono", monospace',
     fontStyle: 'normal',

@@ -1,12 +1,18 @@
-import { MarkdownText } from '@src/components/MarkdownText';
+import { mockTaskTags } from '@src/components/TagsSelect/__mocks__/constants.ts';
 import { TextWithIcon } from '@src/components/TextWithIcon';
 import { EIconTypes } from '@src/constants';
+import { useTagsSelector } from '@src/hooks';
+import { TaskView } from '@src/modules/task-view';
 import { useCreateTaskStore } from '@src/stores/createTask';
 import React from 'react';
 import * as Styled from '../CreateTask/styled.ts';
 
 export const TaskPreview: React.FC = () => {
-  const { description } = useCreateTaskStore((state) => state);
+  const { title, complexityId, description, tagsIds } = useCreateTaskStore(
+    (state) => state,
+  );
+
+  const tags = useTagsSelector(mockTaskTags, tagsIds);
 
   return (
     <Styled.CardStyled
@@ -18,7 +24,12 @@ export const TaskPreview: React.FC = () => {
       }
     >
       <Styled.CardBody>
-        <MarkdownText text={description} />
+        <TaskView
+          title={title}
+          complexityId={complexityId}
+          description={description}
+          tags={tags}
+        />
       </Styled.CardBody>
     </Styled.CardStyled>
   );

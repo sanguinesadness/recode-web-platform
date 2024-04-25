@@ -2,6 +2,7 @@ import { AngleDownIcon } from '@src/assets';
 import { Popover } from '@src/components/Popover';
 import { SearchBar } from '@src/components/SearchBar';
 import { Tag } from '@src/components/Tag';
+import { useTagsSelector } from '@src/hooks';
 import React, { useCallback, useEffect, useMemo, useState } from 'react';
 import { useTheme } from 'styled-components';
 import {
@@ -26,9 +27,7 @@ export const TagsSelect: React.FC<ITagsSelectProps> = ({
   const [selectedTagsIds, setSelectedTagsIds] =
     useState<string[]>(initialTagsIds);
 
-  const selectedTags = useMemo(() => {
-    return tags.filter((tag) => selectedTagsIds.includes(tag.id));
-  }, [selectedTagsIds]);
+  const selectedTags = useTagsSelector(tags, selectedTagsIds);
 
   const availableTags = useMemo(() => {
     return tags.filter((tag) => !selectedTagsIds.includes(tag.id));

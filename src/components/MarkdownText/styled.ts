@@ -11,5 +11,5 @@ export const MarkdownTextStyled = styled(Markdown)(() => ({
 
 export const ImgStyled = styled.img(() => ({
   borderRadius: '10px',
-  maxWidth: '70%',
+  maxWidth: '80%',
 }));

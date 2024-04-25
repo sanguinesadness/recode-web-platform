@@ -48,7 +48,7 @@ export const mockTaskTags: ITag[] = [
   },
   {
     id: 'tag10',
-    text: 'Optimization',
+    text: 'Recursion',
     color: 'brand',
   },
   {
