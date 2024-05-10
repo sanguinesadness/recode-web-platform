@@ -20,6 +20,9 @@
     "paths": {
       "@src/*": [
         "src/*"
+      ],
+      "@config/*": [
+        "config/*"
       ]
     },
     /* Linting */
@@ -29,7 +32,8 @@
     "noFallthroughCasesInSwitch": true
   },
   "include": [
-    "src"
+    "src",
+    "config"
   ],
   "references": [
     {

@@ -1,7 +1,10 @@
-import { TaskAuthor, TaskTags } from '@src/modules/task-view';
 import React from 'react';
+import { TaskAuthor } from '../TaskAuthor';
+import { TaskCode } from '../TaskCode';
 import { TaskDescription } from '../TaskDescription';
+import { TaskTags } from '../TaskTags';
 import { TaskTitle } from '../TaskTitle';
+
 import * as Styled from './styled.ts';
 import { TTaskViewProps } from './types.ts';
 
@@ -12,6 +15,7 @@ export const TaskView: React.FC<TTaskViewProps> = ({
   isLiked,
   number,
   description,
+  code,
   tags,
 }) => {
   return (
@@ -28,6 +32,7 @@ export const TaskView: React.FC<TTaskViewProps> = ({
         <TaskAuthor authorId="ID234-234245-43SDF24-234SD" authorName="x8diar" />
       </Styled.TaskAuthorWrapper>
       <TaskDescription description={description} />
+      {code && <TaskCode code={code} />}
     </Styled.TaskViewStyled>
   );
 };

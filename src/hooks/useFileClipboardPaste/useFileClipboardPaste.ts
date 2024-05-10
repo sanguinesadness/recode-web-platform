@@ -12,6 +12,7 @@ export const useFileClipboardPaste = (
         clipboardData.files.length > 0
       ) {
         const file = clipboardData.files[0];
+        console.log({ file });
         const fileUrl = URL.createObjectURL(file);
         onFileUrl(fileUrl);
       }

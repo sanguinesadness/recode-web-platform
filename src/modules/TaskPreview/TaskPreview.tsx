@@ -8,9 +8,8 @@ import React from 'react';
 import * as Styled from '../CreateTask/styled.ts';
 
 export const TaskPreview: React.FC = () => {
-  const { title, complexityId, description, tagsIds } = useCreateTaskStore(
-    (state) => state,
-  );
+  const { title, complexityId, description, tagsIds, code } =
+    useCreateTaskStore((state) => state);
 
   const tags = useTagsSelector(mockTaskTags, tagsIds);
 
@@ -29,6 +28,7 @@ export const TaskPreview: React.FC = () => {
           complexityId={complexityId}
           description={description}
           tags={tags}
+          code={code}
         />
       </Styled.CardBody>
     </Styled.CardStyled>
