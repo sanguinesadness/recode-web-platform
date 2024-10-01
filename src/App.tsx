@@ -1,5 +1,5 @@
 import 'reset-css';
-import { ThemeSwitcher } from '@src/components/ThemeSwitcher';
+import { Router } from '@src/modules/Router';
 import { ThemeProviderWrapper } from './contexts/theme';
 import { AppWrapper } from './styled.ts';
 
@@ -8,9 +8,8 @@ function App() {
     // eslint-disable-next-line
     // @ts-ignore
     <ThemeProviderWrapper>
-      <AppWrapper>
-        hello world v10
-        <ThemeSwitcher />
+      <AppWrapper id="app">
+        <Router />
       </AppWrapper>
     </ThemeProviderWrapper>
   );

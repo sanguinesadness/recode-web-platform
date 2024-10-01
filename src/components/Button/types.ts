@@ -1,5 +1,14 @@
-import { PropsWithChildren } from 'react';
+import { ButtonHTMLAttributes, PropsWithChildren } from 'react';
 
-export interface IButtonProps extends PropsWithChildren {
-  type: 'primary' | 'secondary';
-}
+export type TButtonColorType =
+  | 'success'
+  | 'secondary'
+  | 'primary'
+  | 'brand'
+  | 'alert'
+  | 'warning';
+
+export type TButtonProps = {
+  colorType?: TButtonColorType;
+} & PropsWithChildren &
+  ButtonHTMLAttributes<HTMLButtonElement>;
